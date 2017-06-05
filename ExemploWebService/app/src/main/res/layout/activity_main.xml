@@ -4,12 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fasb.edu.br.exemplowebservice.MainActivity">
+    tools:context="fasb.edu.br.exemplowebservice.MainActivity"
+    >
 
-    <ListView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lista">
-    </ListView>
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="endereço"
+            android:id="@+id/endLink"/>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lista">
+        </ListView>
+
+    </LinearLayout>
 
 </LinearLayout>

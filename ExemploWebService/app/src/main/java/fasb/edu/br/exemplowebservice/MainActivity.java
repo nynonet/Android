@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -21,7 +22,10 @@ public class MainActivity extends AppCompatActivity {
     private List<Fabricantes> myFab = new ArrayList<>();
     private ArrayAdapter<Fabricantes> adapter;
 
+    private String urlSite = "http://exames.hol.es/dados.php?tabela=fabricantes";  //URL usada
+
     private ListView listView;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listView = (ListView) findViewById(R.id.lista);
+        textView = (TextView) findViewById(R.id.endLink);
+
+        textView.setText(urlSite);  //mostrando a URL que usei
 
 
         new Thread() {
@@ -37,7 +44,9 @@ public class MainActivity extends AppCompatActivity {
                 JSONObject fabDados = null;
                 ConexaoURL conexaoURL = new ConexaoURL();
 
-                fabDados = conexaoURL.GetUrlJson("http://nynoteste.esy.es/dados.php?tabela=fabricantes");
+//                fabDados = conexaoURL.GetUrlJson("http://nynoteste.esy.es/dados.php?tabela=fabricantes");
+                fabDados = conexaoURL.GetUrlJson( urlSite ); //pega o valor da variavel
+
 
                 try {
 
