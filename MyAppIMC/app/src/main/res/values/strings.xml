@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MyAppIMC</string>
+    <string name="app_rodape">Hoje a aula foi...</string>
+    <string name="app_topo">GTI o Curso mais badalado da FASB, pois encontra-se os melhores alunos de toda as Galáxias. By Dilma R.</string>
+    <string name="btn_1">Botão 01</string>
+    <string name="btn_2">Botão total 02</string>
+    <string name="btn_3">Botão 03</string>
+
+    <string name="app_titulo">ICM - Calculadora</string>
+    <string name="app_calc">Calcular</string>
+    <string name="label_peso">Informe seu Peso</string>
+    <string name="label_altura">Informe sua altura</string>
+    <string name="hint_edit">Digite aqui</string>
+</resources>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="3"
+    android:orientation="vertical"
+    tools:context="fasb.edu.br.myappimc.MainActivity">
+
+    <!--topo-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="0.8"
+        android:background="@color/colorAccent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/cor_letra"
+            android:textSize="24px"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:text="@string/app_topo"/>
+
+    </LinearLayout>
+
+    <!--centro-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="2"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary"
+        android:layout_height="0dp">
+        <!--Centro Direita-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:background="@android:color/darker_gray"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="@string/btn_1"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="@string/btn_2"/>
+
+        </LinearLayout>
+
+        <!--Centro Esquerdo-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_weight="1"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="@string/btn_3"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!--rodapé-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="0.2"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="0dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/app_rodape"/>
+    </LinearLayout>
+
+</LinearLayout>

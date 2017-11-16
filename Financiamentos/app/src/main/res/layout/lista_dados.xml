@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/f_parcela"
+            android:gravity="center"
+            android:layout_weight="0.5"
+            android:text="01"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/f_prestacao"
+            android:textColor="#fff00f"
+            android:gravity="end"
+            android:layout_weight="1"
+            android:text="1.000,00"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/f_juros"
+            android:gravity="end"
+            android:layout_weight="1"
+            android:text="1.000,00"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:textColor="@color/colorAccent"
+            android:id="@+id/f_amortizacao"
+            android:text="1.000,00"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_weight="1.5"
+            android:gravity="end"
+            android:textColor="#ef8330"
+            android:layout_height="wrap_content"
+            android:id="@+id/f_saldo"
+            android:text="1.000,00"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

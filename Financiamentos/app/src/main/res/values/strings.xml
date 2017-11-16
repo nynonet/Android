@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Simulador de Financiamento</string>
+
+    <string name="label_dados">Dados para calculo do Financiamento</string>
+    <string name="label_resultado">Resulatdo do calculo</string>
+    <string name="label_valor">Valor do Emprestimo</string>
+    <string name="label_tempo">Número de Parcelas</string>
+    <string name="label_juros">(%) Taxa de juros a.m.</string>
+    <string name="label_calc">Calcular</string>
+    <string name="label_sistema">Modalidade</string>
+
+    <string-array name="lista_sistemas" >
+        <item>PRICE</item>
+        <item>SAC</item>
+        <item>Gauss</item>
+    </string-array>
+
+</resources>
