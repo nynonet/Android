@@ -13,6 +13,7 @@ public class IMCCalc {
     }
 
     public double getValorIMC() {
-        return valorIMC;
+        String valor = String.format("%.2f", valorIMC);
+        return Double.parseDouble(valor.replace(",", "."));
     }
 }

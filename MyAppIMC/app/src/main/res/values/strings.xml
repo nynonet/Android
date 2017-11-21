@@ -11,4 +11,10 @@
     <string name="label_peso">Informe seu Peso</string>
     <string name="label_altura">Informe sua altura</string>
     <string name="hint_edit">Digite aqui</string>
+
+    <string name="result">Seu Indice é %s</string>
+    <string name="msg1">Você encontra-se muito abaixo do peso</string>
+    <string name="msg2">Você encontra-se no peso Ideal</string>
+    <string name="msg3">Você encontra-se com sobre peso "reveja seus habitos"</string>
+    <string name="msg4">Você encontra-se muito acima do peso</string>
 </resources>
