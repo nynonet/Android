@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyAppIMC</string>
+    <string name="app_titulo">IMC - Calculator</string>
+    <string name="result">Your Index is %s</string>
+    <string name="label_altura">Report Your Heigth</string>
+    <string name="hint_edit">type here</string>
+    <string name="msg2">You are at Ideal Weight</string>
+    <string name="msg3">You lie with overweight review your habits</string>
+    <string name="label_peso">Report Your Weight</string>
+    <string name="msg1">You are very underweight</string>
+    <string name="msg4">You are very overweight</string>
+    <string name="app_calc">Calc</string>
+</resources>

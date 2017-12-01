@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyAppIMC</string>
+    <string name="msg4">У тебя очень большой вес</string>
+    <string name="msg3">Вы лежите с избыточным весом, пересматриваете свои привычки</string>
+    <string name="msg2">Вы в идеальном весе</string>
+    <string name="msg1">У вас очень низкий вес</string>
+    <string name="result">Ваш индекс %s</string>
+    <string name="hint_edit">Введите сюда</string>
+    <string name="label_altura">Введите свой рост</string>
+    <string name="label_peso">Сообщить о своем весе</string>
+    <string name="app_calc">Чтобы вычислить</string>
+    <string name="app_titulo">IMC - Калькулятор</string>
+</resources>

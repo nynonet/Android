@@ -6,7 +6,7 @@
     <string name="btn_2">Botão total 02</string>
     <string name="btn_3">Botão 03</string>
 
-    <string name="app_titulo">ICM - Calculadora</string>
+    <string name="app_titulo">IMC - Calculadora</string>
     <string name="app_calc">Calcular</string>
     <string name="label_peso">Informe seu Peso</string>
     <string name="label_altura">Informe sua altura</string>
