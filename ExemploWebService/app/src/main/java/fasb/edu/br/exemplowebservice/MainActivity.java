@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
                 JSONObject fabDados = null;
                 ConexaoURL conexaoURL = new ConexaoURL();
 
-//                fabDados = conexaoURL.GetUrlJson("http://nynoteste.esy.es/dados.php?tabela=fabricantes");
-                fabDados = conexaoURL.GetUrlJson( urlSite ); //pega o valor da variavel
+                fabDados = conexaoURL.GetUrlJson("http://nynoteste.esy.es/dados.php?tabela=fabricantes");
+//                fabDados = conexaoURL.GetUrlJson( urlSite ); //pega o valor da variavel
 
 
                 try {
