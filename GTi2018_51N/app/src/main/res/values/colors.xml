@@ -3,4 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="Aprovado">#4cff3b</color>
+    <color name="Exame">#fff240</color>
+    <color name="Reprovado">#ff404a</color>
 </resources>

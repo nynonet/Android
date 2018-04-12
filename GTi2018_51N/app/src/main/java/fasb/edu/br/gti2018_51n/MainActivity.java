@@ -6,6 +6,7 @@ import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -54,6 +55,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                String nome = listaSensor.get(position).getName();
+//                Toast.makeText( getApplication(), "Nome: "+nome, Toast.LENGTH_LONG ).show();
+
+                if (listaSensor.get(position).getType() == Sensor.TYPE_PROXIMITY) {
+                   //quando o sensor for o de aproximação chama-se a tela com seu controle.
+                    Intent sensorProx = new Intent(getApplication(), aproc.class);
+
+                    startActivity(sensorProx);
+                }
+
+            }
+        });
 
 
     }

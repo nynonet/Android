@@ -2,4 +2,7 @@
     <string name="app_name">GTi2018_51N</string>
     <string name="label_sensor">Minha lista de sensores</string>
     <string name="label_butao_teste">Chama 2 Activity</string>
+
+    <string name="prox_label">Sensor de Proximity</string>
+
 </resources>
