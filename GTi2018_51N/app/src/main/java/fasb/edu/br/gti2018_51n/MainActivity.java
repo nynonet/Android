@@ -83,17 +83,21 @@ public class MainActivity extends AppCompatActivity {
         listaSensor = sensorManager.getSensorList(Sensor.TYPE_ALL);
 
 
-        //Cria uma lista vazia com os nomes dos sensores.
-        List<String> sensorNomes = new ArrayList<>();
+//        //Cria uma lista vazia com os nomes dos sensores.
+//        List<String> sensorNomes = new ArrayList<>();
+//
+//        //adiciono o nome do sensor na lista
+//        for (int i=0; i<listaSensor.size(); i++){
+//            sensorNomes.add( listaSensor.get(i).getName() );
+//        }
+//
+//        //cria um adapter "dados" para ser apresentado na listview
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+//                android.R.layout.simple_list_item_1, sensorNomes);
 
-        //adiciono o nome do sensor na lista
-        for (int i=0; i<listaSensor.size(); i++){
-            sensorNomes.add( listaSensor.get(i).getName() );
-        }
 
-        //cria um adapter "dados" para ser apresentado na listview
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, sensorNomes);
+
+        MeusSensores adapter = new MeusSensores( listaSensor , MainActivity.this);
 
         //Envia os dados para mostrar no listview
         lista.setAdapter(adapter);

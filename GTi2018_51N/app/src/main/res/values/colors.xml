@@ -6,5 +6,7 @@
 
     <color name="Aprovado">#4cff3b</color>
     <color name="Exame">#fff240</color>
-    <color name="Reprovado">#ff404a</color>
+    <color name="Reprovado">#ff000d</color>
+
+    <color name="Ly">#000000</color>
 </resources>
