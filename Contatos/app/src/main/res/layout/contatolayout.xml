@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/foto"
+        android:layout_column="0"
+        android:layout_row="0"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/ic_launcher"/>
+
+    <LinearLayout
+        android:layout_column="1"
+        android:layout_row="0"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_margin="2dp"
+            android:textStyle="bold"
+            android:text="@string/contato_id"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textStyle="bold"
+            android:layout_margin="2dp"
+            android:text="@string/contato_nome"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textStyle="bold"
+            android:layout_margin="2dp"
+            android:text="@string/contato_fone"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_column="2"
+        android:layout_row="0"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/lb_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_margin="2dp"
+            android:text="1"/>
+
+        <TextView
+            android:id="@+id/lb_nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_margin="2dp"
+            android:text="nome"/>
+
+        <TextView
+            android:id="@+id/lb_fone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_margin="2dp"
+            android:text="777"/>
+
+
+    </LinearLayout>
+</GridLayout>

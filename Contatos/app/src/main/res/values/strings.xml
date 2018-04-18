@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Contatos</string>
+
+    <string name="contato_id">Id:</string>
+    <string name="contato_nome">Nome:</string>
+    <string name="contato_fone">Telefone:</string>
+</resources>
