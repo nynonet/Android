@@ -4,4 +4,6 @@
     <string name="contato_id">Id:</string>
     <string name="contato_nome">Nome:</string>
     <string name="contato_fone">Telefone:</string>
+    <string name="contato_nota">Avaliaçao:</string>
+    <string name="app_resultado">Resultado das Avaliações</string>
 </resources>

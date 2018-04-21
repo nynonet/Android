@@ -1,11 +1,11 @@
 package fasb.edu.br.contatos;
 
+import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,12 +14,14 @@ public class MainActivity extends AppCompatActivity {
 
     private List<Contato> lista = new ArrayList<>();
     private ListView listView;
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = (ListView) findViewById(R.id.listaView);
+        button = (Button) findViewById(R.id.btnResultado);
 
         lista.add(  new Contato(1,"C++", "77 99999-1111", "A"));
         lista.add(  new Contato(2,"Delphi", "77 99999-2222", "B"));
@@ -32,14 +34,30 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String nome = lista.get(position).getNome();
-                Toast.makeText(MainActivity.this, nome, Toast.LENGTH_LONG).show();
+            public void onClick(View v) {
+                //http://www.guj.com.br/t/percorrendo-arraylist-com-for-each/52374
+
+                StringBuilder res = new StringBuilder();
+
+                for (Contato c : lista){
+                    res.append( c );
+                    res.append("\n");
+                }
+                //Toast.makeText( MainActivity.this, res.toString(), Toast.LENGTH_SHORT ).show();
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+                builder.setTitle("Resultado das Avaliações");
+                builder.setMessage(res.toString());
+                builder.setPositiveButton("Ok", null);
+
+                AlertDialog alerta = builder.create();
+                alerta.show();
+
             }
         });
-
     }
 
 

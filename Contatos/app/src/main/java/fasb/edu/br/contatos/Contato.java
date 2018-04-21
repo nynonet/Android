@@ -6,12 +6,22 @@ public class Contato {
     private String nome;
     private String telefone;
     private String foto;
+    private float valor;
+
+    public float getValor() {
+        return valor;
+    }
+
+    public void setValor(float valor) {
+        this.valor = valor;
+    }
 
     public Contato(int id, String nome, String telefone, String foto) {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
         this.foto = foto;
+        this.valor = 0;
     }
 
     public int getId() {
@@ -44,5 +54,10 @@ public class Contato {
 
     public void setFoto(String foto) {
         this.foto = foto;
+    }
+
+    @Override
+    public String toString() {
+        return this.nome + "  Avaliado em "+ valor;
     }
 }

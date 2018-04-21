@@ -2,7 +2,7 @@
 <GridLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
 
@@ -44,6 +44,14 @@
             android:layout_margin="2dp"
             android:text="@string/contato_fone"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textStyle="bold"
+            android:layout_margin="2dp"
+            android:text="@string/contato_nota"/>
+
     </LinearLayout>
     <LinearLayout
         android:layout_column="2"
@@ -75,6 +83,27 @@
             android:layout_margin="2dp"
             android:text="777"/>
 
+        <TextView
+            android:id="@+id/lb_nota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_margin="2dp"
+            android:text="1"/>
 
     </LinearLayout>
+    <!--
+        Olá, RatingBar é para colocar as estrelas
+     -->
+    <RatingBar
+        android:id="@+id/nota"
+        android:layout_height="50dp"
+        android:layout_column="0"
+        android:layout_row="2"
+        android:layout_columnSpan="3"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="0"
+        android:soundEffectsEnabled="true"
+        android:stepSize="1" />
 </GridLayout>
