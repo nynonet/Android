@@ -42,11 +42,18 @@ public class MainActivity extends AppCompatActivity {
                 StringBuilder res = new StringBuilder();
 
                 for (Contato c : lista){
-                    res.append( c );
-                    res.append("\n");
+
+                    if (c.isMarcado()){
+                        res.append( c );
+                        res.append("\n");
+                    }
+
                 }
                 //Toast.makeText( MainActivity.this, res.toString(), Toast.LENGTH_SHORT ).show();
 
+                if (res.length()==0) {
+                    return;
+                }
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
                 builder.setTitle("Resultado das Avaliações");

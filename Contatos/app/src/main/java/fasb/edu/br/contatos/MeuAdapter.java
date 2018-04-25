@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -68,6 +69,14 @@ public class MeuAdapter extends BaseAdapter {
         viewMy.id.setText( String.valueOf(lista.get(position).getId()) );
         viewMy.nome.setText( lista.get(position).getNome() );
         viewMy.fone.setText( lista.get(position).getTelefone() );
+        viewMy.selecionado.setChecked( lista.get(position).isMarcado() );
+
+        viewMy.selecionado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lista.get(position).setMarcado( viewMy.selecionado.isChecked() );
+            }
+        });
 
         switch (lista.get(position).getFoto()) {
             case "A": viewMy.foto.setImageDrawable( activity.getResources().getDrawable(R.drawable.cmais) );
@@ -104,6 +113,7 @@ public class MeuAdapter extends BaseAdapter {
         TextView fone;
         TextView nota;
         RatingBar avalia;
+        CheckBox selecionado;
 
         /**
          * Vincula no metodo construtor todos os objeto do layout
@@ -118,6 +128,7 @@ public class MeuAdapter extends BaseAdapter {
             fone = (TextView) view.findViewById(R.id.lb_fone);
             nota = (TextView) view.findViewById(R.id.lb_nota);
             avalia = (RatingBar) view.findViewById(R.id.nota);
+            selecionado = (CheckBox) view.findViewById(R.id.ckexemplo);
         }
 
     }

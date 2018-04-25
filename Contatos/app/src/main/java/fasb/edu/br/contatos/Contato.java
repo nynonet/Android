@@ -7,6 +7,15 @@ public class Contato {
     private String telefone;
     private String foto;
     private float valor;
+    private boolean marcado;
+
+    public boolean isMarcado() {
+        return marcado;
+    }
+
+    public void setMarcado(boolean marcado) {
+        this.marcado = marcado;
+    }
 
     public float getValor() {
         return valor;
@@ -22,6 +31,7 @@ public class Contato {
         this.telefone = telefone;
         this.foto = foto;
         this.valor = 0;
+        this.marcado = false;
     }
 
     public int getId() {
