@@ -99,7 +99,7 @@ public class MeuAdapter extends BaseAdapter {
                 //mostra na tela o valor setado
                 viewMy.nota.setText(String.valueOf(rating));
                 //grava no item da lista o valor que por ultimo fora setado.
-//                lista.get(position).setValor( rating );
+                lista.get(position).setValor( rating );
             }
         });
 
