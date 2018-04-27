@@ -28,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
         lista.add(  new Contato(3,"Java", "77 99999-3333", "C"));
         lista.add(  new Contato(4,"Python", "77 99999-4444", "D"));
         lista.add(  new Contato(5,"Swift", "77 99999-5555", "E"));
+        lista.add(  new Contato(6,"Swift 2", "77 99999-6666", ""));
+        lista.add(  new Contato(7,"Swift 3", "77 99999-8888", "C"));
+        lista.add(  new Contato(8,"Swift 4", "77 99999-9999", "A"));
        // lista.add(  new Contato(6,"Android", "77 99999-6666", "F"));
 
         MeuAdapter adapter = new MeuAdapter(lista, this);

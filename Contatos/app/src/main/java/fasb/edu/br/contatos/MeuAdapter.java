@@ -70,6 +70,7 @@ public class MeuAdapter extends BaseAdapter {
         viewMy.nome.setText( lista.get(position).getNome() );
         viewMy.fone.setText( lista.get(position).getTelefone() );
         viewMy.selecionado.setChecked( lista.get(position).isMarcado() );
+        viewMy.avalia.setTag(position);
 
         viewMy.selecionado.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,19 +79,19 @@ public class MeuAdapter extends BaseAdapter {
             }
         });
 
-        switch (lista.get(position).getFoto()) {
-            case "A": viewMy.foto.setImageDrawable( activity.getResources().getDrawable(R.drawable.cmais) );
-                break;
-            case "B": viewMy.foto.setImageDrawable( activity.getResources().getDrawable(R.drawable.delphi) );
-                break;
-            case "C": viewMy.foto.setImageDrawable( activity.getResources().getDrawable(R.drawable.java) );
-                break;
-            case "D": viewMy.foto.setImageDrawable( activity.getResources().getDrawable(R.drawable.python) );
-                break;
-            case "E": viewMy.foto.setImageDrawable( activity.getResources().getDrawable(R.drawable.swift) );
-                break;
-            default: ;
-        }
+//        switch (lista.get(position).getFoto()) {
+//            case "A": viewMy.foto.setImageDrawable( activity.getResources().getDrawable(R.drawable.cmais) );
+//                break;
+//            case "B": viewMy.foto.setImageDrawable( activity.getResources().getDrawable(R.drawable.delphi) );
+//                break;
+//            case "C": viewMy.foto.setImageDrawable( activity.getResources().getDrawable(R.drawable.java) );
+//                break;
+//            case "D": viewMy.foto.setImageDrawable( activity.getResources().getDrawable(R.drawable.python) );
+//                break;
+//            case "E": viewMy.foto.setImageDrawable( activity.getResources().getDrawable(R.drawable.swift) );
+//                break;
+//            default: ;
+//        }
         //fica observando e modificando os valores quando avaliar o ratingBar
         viewMy.avalia.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
@@ -98,16 +99,17 @@ public class MeuAdapter extends BaseAdapter {
                 //mostra na tela o valor setado
                 viewMy.nota.setText(String.valueOf(rating));
                 //grava no item da lista o valor que por ultimo fora setado.
-                lista.get(position).setValor( rating );
+//                lista.get(position).setValor( rating );
             }
         });
+
         //devolve a lista p/o listview
         return convertView;
     }
 
     private static class ViewMy {
         //declara-se todos os componente do Layout
-        ImageView foto;
+//        ImageView foto;
         TextView id;
         TextView nome;
         TextView fone;
@@ -122,7 +124,7 @@ public class MeuAdapter extends BaseAdapter {
          * @param view
          */
         public ViewMy(View view){
-            foto = (ImageView) view.findViewById(R.id.foto);
+//            foto = (ImageView) view.findViewById(R.id.foto);
             id = (TextView) view.findViewById(R.id.lb_id);
             nome = (TextView) view.findViewById(R.id.lb_nome);
             fone = (TextView) view.findViewById(R.id.lb_fone);
