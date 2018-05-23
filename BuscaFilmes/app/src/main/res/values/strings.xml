@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Busca Informação de Filmes/Série</string>
+
+    <string name="busca_texto">Busca de Filme/Série</string>
+    <string name="busca_btn_pesq">Pesquisar</string>
+    <string name="busca_btn_limp">Limpar</string>
+
+    <string name="resp_titulo">Titulo</string>
+    <string name="resp_genero">Gênero</string>
+    <string name="resp_ano">Ano</string>
+    <string name="resp_escritor">Escritor</string>
+    <string name="resp_atores">Atores</string>
+
+
+</resources>

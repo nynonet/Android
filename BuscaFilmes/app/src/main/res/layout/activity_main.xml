@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <!--
+       TODO(7) MONTE O LAYOUT CONFOME EXEMPLO ABIXO.
+    -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/busca_texto"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <!--TODO(8) ESSE CAMPO É PARA INFORMAR O NOME DO FILME/SÉRIE A BUSCAR-->
+            <EditText
+                android:id="@+id/edit_busca"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                />
+
+            <Button
+                android:text="@string/busca_btn_pesq"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnPesquisa"
+                android:layout_weight="1"
+                />
+            <Button
+                android:text="@string/busca_btn_limp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnLimpa"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_height="0dp">
+
+            <ListView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/lista"
+                >
+
+            </ListView>
+
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:id="@+id/imagem"
+                android:src="@drawable/ic_launcher_background"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:layout_height="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/resp_titulo"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="nome do titulo para teste"
+                android:id="@+id/rp_titulo"
+                style="@android:style/TextAppearance"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/resp_genero"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="nome do genero"
+                android:id="@+id/rp_genero"
+                style="@android:style/TextAppearance"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/resp_ano"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1998"
+                android:id="@+id/rp_ano"
+                style="@android:style/TextAppearance"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/resp_escritor"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="nome do escritor para teste"
+                android:id="@+id/rp_escritor"
+                style="@android:style/TextAppearance"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/resp_atores"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="nome dos autores... "
+                android:id="@+id/rp_atores"
+                style="@android:style/TextAppearance"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
