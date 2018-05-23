@@ -12,4 +12,7 @@
     <string name="resp_atores">Atores</string>
 
 
+    <string name="OMDbAPIKey">sua chave aqui!</string>
+
+
 </resources>

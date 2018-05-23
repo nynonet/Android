@@ -133,24 +133,16 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected List<Filme> doInBackground(Void... voids) {
-            int i = 0;
-            while (i<40){
-                i = i+1;
-                try {
-                    Thread.sleep(200);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-            List<Filme> re = new ArrayList<>();
-            re.add(new Filme("Teste 2", "2002", "sss", "Eu mesmo", "haha, didi", null));
-            re.add(new Filme("Teste", "2000", "sss", "Eu mesmo", "haha, didi", null));
-            re.add(new Filme("Teste 5", "2005", "sss", "Eu mesmo", "haha, didi", null));
-            return re;
+            //TODO (23) EXECUTA A BUSCA E DEVOLVE O RESULTADO.
+
+            BuscaFilmes consulta = new BuscaFilmes(MainActivity.this);
+
+            return consulta.getFilmes( editbusca.getText().toString() );
         }
 
         @Override
         protected void onPostExecute(List<Filme> filmes) {
+            //TODO (24) ADICIONA O RESULTADO E FECHA A TELA DE BUSCANDO.
             resultadoBusca = filmes;
             load.dismiss();
 
