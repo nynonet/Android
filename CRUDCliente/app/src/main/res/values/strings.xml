@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">CRUDCliente</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="lab_cliente">Informe o nome do cliente</string>
+    <string name="lab_uf">Informe o estado do cliente</string>
+    <string name="lab_status">Cliente Ativo?</string>
+
+    <string name="btnCancel">Cancelar</string>
+    <string name="btnSalvar">Salvar</string>
+
+    <array name="estados">
+        <item>BA</item>
+        <item>SP</item>
+        <item>RJ</item>
+        <item>RS</item>
+        <item>ES</item>
+        <item>PI</item>
+    </array>
+
+</resources>

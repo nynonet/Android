@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lab_cliente"
+
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/lb_cliente"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edt_cliente"
+        android:layout_margin="5dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lb_estados"
+        android:layout_margin="5dp"
+        android:text="@string/lab_uf"/>
+
+    <Spinner
+        android:id="@+id/edt_estados"
+        android:layout_width="match_parent"
+        android:entries="@array/estados"
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content">
+    </Spinner>
+
+    <CheckBox
+        android:id="@+id/edt_status"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lab_status"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:text="@string/btnCancel"
+            android:drawableTop="@android:drawable/ic_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_salvar"
+            android:drawableTop="@android:drawable/ic_menu_save"
+            android:text="@string/btnSalvar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

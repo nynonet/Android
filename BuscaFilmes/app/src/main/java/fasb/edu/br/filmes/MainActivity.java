@@ -87,17 +87,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //TODO(20) SETANDO OS VALORES DO FILME SELECIONADO
-                titulo.setText( resultadoBusca.get(position).getTitulo() );
-                ano.setText( resultadoBusca.get(position).getAno() );
-                genero.setText( resultadoBusca.get(position).getGenero() );
-                escritor.setText( resultadoBusca.get(position).getEscritor() );
-                atores.setText( resultadoBusca.get(position).getAtores() );
-                imagem.setImageBitmap( resultadoBusca.get(position).getImagemCapa() );
+                titulo.setText(resultadoBusca.get(position).getTitulo());
+                ano.setText(resultadoBusca.get(position).getAno());
+                genero.setText(resultadoBusca.get(position).getGenero());
+                escritor.setText(resultadoBusca.get(position).getEscritor());
+                atores.setText(resultadoBusca.get(position).getAtores());
+                imagem.setImageBitmap(resultadoBusca.get(position).getImagemCapa());
             }
         });
     }
+
     //TODO(13) CRIANDO O PROCEDIMENTO LIMPAR
-    private void limpar(){
+    private void limpar() {
         //LIMPA TODAS AS INFORMAÇÕES DA TELA E DA LISTA
         resultadoBusca = new ArrayList<>();
         titulo.setText("");
@@ -114,13 +115,15 @@ public class MainActivity extends AppCompatActivity {
         //PROCEDIMENTO PARA PREENCHER OS DADOS DA CONSULTA
         PreencheLista();
     }
+
     //TODO(14) CRIANDO O PROCEDIMENTO PARA PREENCHER OS DADOS NA TELA
     private void PreencheLista() {
         ArrayAdapter<Filme> adapter = new ArrayAdapter<>(MainActivity.this, R.layout.support_simple_spinner_dropdown_item, resultadoBusca);
         lista.setAdapter(adapter);
     }
+
     //TODO(21) EXECUTA A PESQUISA COMO UMA TAREFA A PARTE..
-    private class Pesquisa extends AsyncTask<Void, Void, List<Filme>>{
+    private class Pesquisa extends AsyncTask<Void, Void, List<Filme>> {
 
         ProgressDialog load;//IRÁ APRESENTAR UMA TELA DE AGUARDANDO PARA O USUÁRIO
 
@@ -137,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
 
             BuscaFilmes consulta = new BuscaFilmes(MainActivity.this);
 
-            return consulta.getFilmes( editbusca.getText().toString() );
+            return consulta.getFilmes(editbusca.getText().toString());
         }
 
         @Override
