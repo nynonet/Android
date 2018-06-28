@@ -11,7 +11,7 @@ import java.util.List;
 import fasb.edu.br.crudcliente.modal.Cliente;
 
 public class ClienteDAO {
-    private String TABELA = "clientes";
+    private String TABELA = "Clientes";
     private dbGateway gw;
 
     /**
@@ -55,15 +55,33 @@ public class ClienteDAO {
     }
 
     public boolean Update(Cliente c) {
-        return true;
+
+        ContentValues cv = new ContentValues();
+        cv.put("nome", c.getNome());
+        cv.put( "uf", c.getUf() );
+        cv.put( "status", (c.isStatus()? 1 : 0) );
+
+        return gw.getDatabase().update(TABELA, cv, "ID=?", new String[]{c.getId()+""}) > 0;
     }
 
     public boolean Delete(Cliente c) {
-        return true;
+        return gw.getDatabase().delete(TABELA, "ID=?", new String[]{c.getId()+""}) > 0;
     }
 
     public Cliente getCliente(int id) {
-        return new Cliente();
+
+        Cursor cursor = gw.getDatabase().rawQuery("SELECT * FROM Clientes WHERE id=?", new String[]{id+""} );
+
+        Cliente c = new Cliente();
+
+        while (cursor.moveToNext()) {
+            c.setId(id);
+            c.setNome( cursor.getString( cursor.getColumnIndex("nome")) );
+            c.setUf( cursor.getString( cursor.getColumnIndex("uf") ));
+            c.setStatus( ( cursor.getInt(cursor.getColumnIndex("status")) )>0 );
+        }
+        cursor.close();
+        return c;
     }
 
     public List<Cliente> getClientes() {

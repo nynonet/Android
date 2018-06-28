@@ -7,9 +7,16 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ListView
-        android:id="@+id/semestre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/botaoPesquisa"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/botaoResultado"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
