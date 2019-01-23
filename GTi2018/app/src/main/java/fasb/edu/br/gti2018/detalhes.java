@@ -25,10 +25,9 @@ public class detalhes extends AppCompatActivity {
 
         if (dados != null){
             lista = (List<Disciplina>) dados.getSerializable("lista");
-            ArrayAdapter<Disciplina> adapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, lista);
+            ArrayAdapter<Disciplina> adapter = new ArrayAdapter<>(this,
+                                R.layout.support_simple_spinner_dropdown_item, lista);
             listaXML.setAdapter( adapter );
-
-            Log.i("Haha", String.valueOf(dados.getParcelable("aa")))    ;
         }
 
     }
