@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".Main2Activity">
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:id="@+id/listview_gti"
+        android:layout_weight="9"
+        android:entries="@array/ListaGti"
+        android:layout_height="0dp">
+    </ListView>
+
+    <Button
+        android:id="@+id/btnTela2"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:text="@string/labelbtn2"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="330dp" />
+
+</LinearLayout>
