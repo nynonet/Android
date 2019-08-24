@@ -3,6 +3,7 @@
     <string name="app_ola">Olá turma de GTI 2019</string>
     <string name="labelbtn1">Chama tela 2</string>
     <string name="labelbtn2">Volta tela 1</string>
+    <string name="labelbtn3">Voltar</string>
 
     <array name="ListaGti">
         <item>Algoritmo</item>

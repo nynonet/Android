@@ -1,5 +1,6 @@
 package edu.fasb.aulagti2019;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,10 +37,15 @@ public class Main2Activity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 String nome = list1.getItemAtPosition(position).toString();
-
                 Log.i("APPMEU", nome);
-
                 Toast.makeText(getApplicationContext(), nome, Toast.LENGTH_SHORT).show();
+
+                Intent telaResult = new Intent(getApplicationContext(), resultado.class);
+
+                telaResult.putExtra("Nome", nome);
+
+                startActivity( telaResult );
+
 
             }
         });
