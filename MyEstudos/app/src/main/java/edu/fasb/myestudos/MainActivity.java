@@ -11,13 +11,14 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btn_act1;
     private String TAG_APP = "MyAPP";
     private ListView myList1;
+    private AdapterMinhaLista meuAdapter;
+    private ArrayList<MinhaLista> minhaListas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,26 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(TAG_APP, nome);
             }
         });
+
+        carregarDados();
+
+    }
+
+    private void carregarDados() {
+
+        minhaListas = new ArrayList<MinhaLista>();
+        MinhaLista m1 = new MinhaLista( 0, "Imagem 1", getResources().getDrawable(R.drawable.ic_done1) );
+        MinhaLista m2 = new MinhaLista( 1, "Imagem 2", getResources().getDrawable(R.drawable.ic_done2) );
+        MinhaLista m3 = new MinhaLista( 2, "Imagem 3", getResources().getDrawable(R.drawable.ic_done3) );
+        MinhaLista m4 = new MinhaLista( 2, "Carro", getResources().getDrawable(R.drawable.ic_carro) );
+
+        minhaListas.add(m1);
+        minhaListas.add(m2);
+        minhaListas.add(m3);
+        minhaListas.add(m4);
+
+        meuAdapter = new AdapterMinhaLista(this, minhaListas);
+        myList1.setAdapter(meuAdapter);
 
     }
 
