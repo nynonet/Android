@@ -44,14 +44,14 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                String nome = list1.getItemAtPosition(position).toString();
-                Log.i("APPMEU", nome);
-                Toast.makeText(getApplicationContext(), nome, Toast.LENGTH_SHORT).show();
+//                String nome = list1.getItemAtPosition(position).toString();
+//                Log.i("APPMEU", nome);
+//                Toast.makeText(getApplicationContext(), nome, Toast.LENGTH_SHORT).show();
+
 
                 Intent telaResult = new Intent(getApplicationContext(), resultado.class);
-
-                telaResult.putExtra("Nome", nome);
-
+                telaResult.putExtra("ObjCurso", cursos.get( position ));
+//                telaResult.putExtra("Nome", nome);
                 startActivity( telaResult );
             }
         });

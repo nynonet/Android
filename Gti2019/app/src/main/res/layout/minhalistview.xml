@@ -16,7 +16,6 @@
             android:layout_width="50dp"
             android:id="@+id/iconeLista"
             >
-
         </ImageView>
 
         <TextView

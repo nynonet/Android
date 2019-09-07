@@ -1,8 +1,10 @@
 package edu.fasb.aulagti2019.lista_person;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
-public class Curso {
+public class Curso implements Parcelable {
 
     private int id;
     private String texto;
@@ -14,6 +16,24 @@ public class Curso {
         this.texto = texto;
         this.icone = icone;
     }
+
+    protected Curso(Parcel in) {
+        id = in.readInt();
+        texto = in.readString();
+        icone = in.readInt();
+    }
+
+    public static final Creator<Curso> CREATOR = new Creator<Curso>() {
+        @Override
+        public Curso createFromParcel(Parcel in) {
+            return new Curso(in);
+        }
+
+        @Override
+        public Curso[] newArray(int size) {
+            return new Curso[size];
+        }
+    };
 
     public int getId() {
         return id;
@@ -43,5 +63,19 @@ public class Curso {
     @Override
     public String toString() {
         return this.texto;
+    }
+
+
+    @Override
+    public int describeContents() {
+        return 0;  //pode deixar o valor default
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        // escreve os dados que serão transportados
+        dest.writeInt(this.id);
+        dest.writeString(this.texto);
+        dest.writeInt(this.icone);
     }
 }

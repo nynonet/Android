@@ -41,9 +41,19 @@ public class MainActivity extends AppCompatActivity {
         myList1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String nome = myList1.getItemAtPosition( position ).toString();
-                Toast.makeText( parent.getContext(), nome , Toast.LENGTH_LONG ).show();
-                Log.e(TAG_APP, nome);
+//                String nome = myList1.getItemAtPosition( position ).toString();
+//                Toast.makeText( parent.getContext(), nome , Toast.LENGTH_LONG ).show();
+//                Log.e(TAG_APP, nome);
+
+                Intent nova = new Intent(MainActivity.this, Main2Activity.class);
+
+                nova.putExtra("Obj", (MinhaLista) minhaListas.get( position ) );
+
+                //nova.putExtra("Nome", "Vai da tudo certo!" );
+
+                startActivity(nova);
+
+
             }
         });
 

@@ -1,8 +1,10 @@
 package edu.fasb.myestudos;
 
 import android.graphics.drawable.Drawable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class MinhaLista {
+public class MinhaLista implements Parcelable {
 
     private int id;
     private String nome;
@@ -13,6 +15,23 @@ public class MinhaLista {
         this.icone = icone;
         this.id = id;
     }
+
+    protected MinhaLista(Parcel in) {
+        id = in.readInt();
+        nome = in.readString();
+    }
+
+    public static final Creator<MinhaLista> CREATOR = new Creator<MinhaLista>() {
+        @Override
+        public MinhaLista createFromParcel(Parcel in) {
+            return new MinhaLista(in);
+        }
+
+        @Override
+        public MinhaLista[] newArray(int size) {
+            return new MinhaLista[size];
+        }
+    };
 
     public String getNome() {
         return nome;
@@ -36,5 +55,17 @@ public class MinhaLista {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(nome);
+//        dest.writeValue(icone);
     }
 }
