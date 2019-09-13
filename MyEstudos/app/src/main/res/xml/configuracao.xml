@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Grupo de Informações">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="switch_preference_1"
+            android:title="Switch preference" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="check_box_preference_1"
+            android:title="Check box preference" />
+
+        <EditTextPreference
+            android:defaultValue="Default value"
+            android:key="edit_text_preference_1"
+            android:icon="@android:drawable/btn_star_big_on"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Edit text preference" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Outros">
+
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/listaExp1"
+            android:entryValues="@array/listaExp1"
+            android:key="list_preference_1"
+            android:title="List preference" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -15,6 +15,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private Button btn_act1;
+    private Button btn_act2;
+    private Button btn_act3;
     private String TAG_APP = "MyAPP";
     private ListView myList1;
     private AdapterMinhaLista meuAdapter;
@@ -26,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btn_act1 = (Button) findViewById(R.id.btnTela1);
+        btn_act2 = (Button) findViewById(R.id.btnConfig);
+        btn_act3 = (Button) findViewById(R.id.btnConfigShow);
         myList1 = (ListView) findViewById(R.id.lista1);
 
         btn_act1.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +39,24 @@ public class MainActivity extends AppCompatActivity {
                 nova.putExtra("Nome", "Vai da tudo certo!" );
                 startActivity(nova);
                 Log.i(TAG_APP, "Botão 1 Ok!");
+            }
+        });
+
+        btn_act2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cfg = new Intent(MainActivity.this, Configuracoes.class);
+                startActivity(cfg);
+                Log.i(TAG_APP, "Botão 2 Ok!");
+            }
+        });
+
+        btn_act3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String n = Configuracoes.getConfig(getApplication()).getString("edit_text_preference_1", "");
+                Toast.makeText( v.getContext(), n , Toast.LENGTH_LONG ).show();
+                Log.i(TAG_APP, n);
             }
         });
 

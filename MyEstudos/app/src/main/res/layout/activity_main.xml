@@ -24,6 +24,22 @@
         tools:layout_editor_absoluteX="125dp"
         tools:layout_editor_absoluteY="393dp" />
 
+    <Button
+        android:id="@+id/btnConfig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_config"
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="393dp" />
+
+    <Button
+        android:id="@+id/btnConfigShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_configshow"
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="393dp" />
+
     <ListView
         android:id="@+id/lista1"
         android:layout_width="match_parent"
