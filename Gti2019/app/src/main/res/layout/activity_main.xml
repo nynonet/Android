@@ -32,4 +32,21 @@
         android:id="@+id/ImgGTI"
         android:src="@mipmap/ic_gti"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnConfig"
+        android:text="@string/config_nome"
+        ></Button>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtEmail"
+        android:text="@string/config_email"
+        android:visibility="invisible"
+        >
+
+    </TextView>
+
 </LinearLayout>

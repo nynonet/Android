@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Informações Sobre Isso">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:icon="@mipmap/ic_gti"
+            android:key="email_visivel"
+            android:title="@string/config_check" />
+        <EditTextPreference
+            android:defaultValue="aaaa@a.com"
+            android:icon="@android:drawable/ic_dialog_email"
+            android:inputType="textEmailAddress"
+            android:key="edit_email"
+            android:selectAllOnFocus="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:title="@string/config_email" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Grupos">
+
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/ListaGti"
+            android:entryValues="@array/ListaGti"
+            android:key="lista_grupos"
+            android:title="@string/config_listanome" />
+    </PreferenceCategory>
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="switch_preference_1"
+        android:title="Switch preference" />
+</PreferenceScreen>

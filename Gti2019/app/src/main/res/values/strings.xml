@@ -5,6 +5,11 @@
     <string name="labelbtn2">Volta tela 1</string>
     <string name="labelbtn3">Voltar</string>
 
+    <string name="config_email">Informe seu e-mail</string>
+    <string name="config_listanome">Grupo de Disciplina</string>
+    <string name="config_nome">Configuração</string>
+    <string name="config_check">Mostrar o e-mail?</string>
+
     <array name="ListaGti">
         <item>Algoritmo</item>
         <item>Banco de Dados I</item>
