@@ -1,21 +1,21 @@
 <resources>
-    <string name="app_name">MyEstudos</string>
-
-    <string name="label_botao1">Chamar Activity 2</string>
-    <string name="label_botao2">Volta para Activity 1</string>
-    <string name="label_config">Configuração</string>
-    <string name="label_configshow">Mostra dados</string>
-
     <array name="listaExp1">
         <item>Item 1</item>
         <item>Item 2</item>
         <item>Item 3</item>
         <item>Item 4</item>
     </array>
+
     <array name="listaExp2">
         <item>1</item>
         <item>2</item>
         <item>3</item>
         <item>4</item>
     </array>
+    <string name="label_botao2">Volta para Activity 1</string>
+    <string name="label_config">Configuração</string>
+    <string name="label_configshow">Mostra dados</string>
+
+    <string name="app_name">MyEstudos</string>
+    <string name="label_botao1">Chamar Activity 2</string>
 </resources>

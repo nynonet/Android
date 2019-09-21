@@ -79,6 +79,8 @@ public class Main2Activity extends AppCompatActivity {
 
         //informa a listview quais são os dados e como deve apresenta-lós.
         list1.setAdapter( adapterCurso );
+        list1.setDivider( null );
+        list1.setSelection( 0 );
     }
 
 }

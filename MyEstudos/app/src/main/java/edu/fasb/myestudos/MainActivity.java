@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         btn_act1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent nova = new Intent(MainActivity.this, Main2Activity.class);
+                Intent nova = new Intent(MainActivity.this, listacidades.class);
                 nova.putExtra("Nome", "Vai da tudo certo!" );
                 startActivity(nova);
                 Log.i(TAG_APP, "Botão 1 Ok!");
