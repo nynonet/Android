@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //chamando a tela de configuração
                 Intent config = new Intent(getApplication(), Configuracao.class);
                 startActivity(config);
             }

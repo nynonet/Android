@@ -1,7 +1,10 @@
 package edu.fasb.myestudos;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -23,6 +26,15 @@ public class listacidades extends AppCompatActivity {
         btnNovo = (ImageButton) findViewById(R.id.novaCidades);
         view = (ListView) findViewById(R.id.listaCidades);
 
+        btnNovo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getBaseContext(), TelaCidade.class);
+                i.putExtra("Id", -1);  //para novos registro
+                startActivity(i);
+            }
+        });
+
         Carregar();
     }
 
@@ -38,5 +50,6 @@ public class listacidades extends AppCompatActivity {
         view.setAdapter(cidadesAdapter);
 
     }
+
 
 }

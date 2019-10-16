@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
 
 public class Cidades {
-
+    public static final String[] colunas = {"id", "nome", "uf"};
     private Integer id;
     private String nome;
     private String uf;
@@ -58,7 +58,18 @@ public class Cidades {
         return "DELETE FROM cidades WHERE id = ?";
     }
 
-    public String getSELECT(String where) {
+    public static String getSELECT(String where) {
         return "SELECT id, nome, uf FROM cidades "+ where;
+    }
+
+    public static String getCreate(){
+        return "CREATE TABLE cidades (id integer not null, nome varchar(60), uf char(2), primary key (id));";
+    }
+    public static String getDrop() {
+        return "DROP TABLE IF EXISTS cidades";
+    }
+
+    public static String getTabela(){
+        return "cidades";
     }
 }

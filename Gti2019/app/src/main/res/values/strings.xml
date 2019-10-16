@@ -4,6 +4,7 @@
     <string name="labelbtn1">Chama tela 2</string>
     <string name="labelbtn2">Volta tela 1</string>
     <string name="labelbtn3">Voltar</string>
+    <string name="labelbtn4">Adicionar</string>
 
     <string name="config_email">Informe seu e-mail</string>
     <string name="config_listanome">Grupo de Disciplina</string>

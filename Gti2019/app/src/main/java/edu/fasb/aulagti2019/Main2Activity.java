@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class Main2Activity extends AppCompatActivity {
     private ListView list1;     //listview de cursos
     private List<Curso> cursos; //Lista de cursos
     private AdapterCurso adapterCurso;  //Adapater do Curso p/nossa lista view personalizada
+    private ImageButton btnAdd; //botão para adicionar novo curso
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,8 @@ public class Main2Activity extends AppCompatActivity {
 
         btn1 = (Button) findViewById(R.id.btnTela2);    //vincula o botão
         list1 = (ListView) findViewById(R.id.listview_gti); //vincula o listview
+
+        btnAdd = (ImageButton) findViewById(R.id.btnAddCurso);  //vincula ao botão de adicionar curso
 
         //programando o botão
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -43,15 +47,22 @@ public class Main2Activity extends AppCompatActivity {
         list1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-//                String nome = list1.getItemAtPosition(position).toString();
-//                Log.i("APPMEU", nome);
-//                Toast.makeText(getApplicationContext(), nome, Toast.LENGTH_SHORT).show();
-
-
+                //chama a tela de resultado "Editar curso"
                 Intent telaResult = new Intent(getApplicationContext(), resultado.class);
+                //enviando objeto curso a ser editado.
                 telaResult.putExtra("ObjCurso", cursos.get( position ));
-//                telaResult.putExtra("Nome", nome);
+                //Chamando a tela
+                startActivity( telaResult );
+            }
+        });
+
+        //programando o botão add
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //chama a tela de resultado "cadastrar novo curso"
+                Intent telaResult = new Intent(getApplicationContext(), resultado.class);
+                //Chamando a tela
                 startActivity( telaResult );
             }
         });

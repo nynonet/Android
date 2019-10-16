@@ -78,4 +78,30 @@ public class Curso implements Parcelable {
         dest.writeString(this.texto);
         dest.writeInt(this.icone);
     }
+
+    /**
+     * Retorna a SQL de SELECT do curso
+     * @param condicao - paramentos p/filtro ex.: where id = 1
+     * @return
+     */
+    public String getSelect( String condicao ) {
+        return "SELECT * FROM cursos "+ condicao;
+    }
+
+    /**
+     * Retorna a SQL de Criação da Tabela curso
+     * @return
+     */
+    public static String getCreateTable() {
+        return "CREATE TABLE cursos (id auto_increment, " +
+                "texto varchar(60), icone integer, primary key (id) );";
+    }
+
+    /**
+     * Retorna o nome da tabela
+     * @return
+     */
+    public static String getTable () {
+        return "cursos";
+    }
 }

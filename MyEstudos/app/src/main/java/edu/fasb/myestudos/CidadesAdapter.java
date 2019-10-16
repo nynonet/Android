@@ -1,6 +1,7 @@
 package edu.fasb.myestudos;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +37,7 @@ public class CidadesAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, final ViewGroup parent) {
         apoio obj;
 
         Cidades c = lista.get( position );
@@ -62,6 +63,13 @@ public class CidadesAdapter extends BaseAdapter {
             public void onClick(View v) {
                 System.out.println("deu certo deletar?");
                 lista.remove(  position );
+            }
+        });
+
+        obj.editar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 

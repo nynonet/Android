@@ -18,4 +18,15 @@
 
     <string name="app_name">MyEstudos</string>
     <string name="label_botao1">Chamar Activity 2</string>
+
+    <string-array name="uf_array">
+        <item>BA</item>
+        <item>SP</item>
+        <item>RJ</item>
+        <item>PE</item>
+        <item>PB</item>
+        <item>MA</item>
+        <item>PI</item>
+        <item>SE</item>
+    </string-array>
 </resources>
