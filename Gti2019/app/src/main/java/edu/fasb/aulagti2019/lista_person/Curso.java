@@ -17,6 +17,10 @@ public class Curso implements Parcelable {
         this.icone = icone;
     }
 
+    public Curso() {
+
+    }
+
     protected Curso(Parcel in) {
         id = in.readInt();
         texto = in.readString();
@@ -84,7 +88,7 @@ public class Curso implements Parcelable {
      * @param condicao - paramentos p/filtro ex.: where id = 1
      * @return
      */
-    public String getSelect( String condicao ) {
+    public static String getSelect( String condicao ) {
         return "SELECT * FROM cursos "+ condicao;
     }
 

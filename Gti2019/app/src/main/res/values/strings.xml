@@ -11,6 +11,20 @@
     <string name="config_nome">Configuração</string>
     <string name="config_check">Mostrar o e-mail?</string>
 
+    <string name="resultado_lab_titulo">Cadastrar Curso</string>
+    <string name="resultado_lab_titulo_alt">Alterar Curso</string>
+    <string name="resultado_lab_nome_curso">Nome do Curso</string>
+    <string name="resultado_lab_nome_imagem">Selecione a imagem</string>
+    <string name="resultado_lab_nome_salvar">Salvar Curso</string>
+
+    <integer-array name="resultado_lista_imagens">
+        <item>@android:drawable/ic_menu_add</item>
+        <item>@android:drawable/ic_menu_delete</item>
+        <item>@android:drawable/ic_menu_agenda</item>
+        <item>@android:drawable/ic_menu_camera</item>
+        <item>@android:drawable/ic_menu_share</item>
+    </integer-array>
+
     <array name="ListaGti">
         <item>Algoritmo</item>
         <item>Banco de Dados I</item>

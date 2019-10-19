@@ -23,6 +23,8 @@ public class listacidades extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listacidades);
 
+
+
         btnNovo = (ImageButton) findViewById(R.id.novaCidades);
         view = (ListView) findViewById(R.id.listaCidades);
 
@@ -30,7 +32,7 @@ public class listacidades extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getBaseContext(), TelaCidade.class);
-                i.putExtra("Id", -1);  //para novos registro
+                //i.putExtra("Id", -1);  //para novos registro
                 startActivity(i);
             }
         });
@@ -38,12 +40,21 @@ public class listacidades extends AppCompatActivity {
         Carregar();
     }
 
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Carregar();
+    }
+
     private void Carregar(){
-        cidades = new ArrayList<>();
-        cidades.add( new Cidades(1, "Barrerias", "BA") );
-        cidades.add( new Cidades(2, "Rio de Janeiro", "RJ") );
-        cidades.add( new Cidades(3, "São Paulo", "SP") );
-        cidades.add( new Cidades(4, "Barra", "BA") );
+//        cidades = new ArrayList<>();
+//        cidades.add( new Cidades(1, "Barrerias", "BA") );
+//        cidades.add( new Cidades(2, "Rio de Janeiro", "RJ") );
+//        cidades.add( new Cidades(3, "São Paulo", "SP") );
+//        cidades.add( new Cidades(4, "Barra", "BA") );
+
+        cidades = new CidadesController(getApplication()).getSelect("");
 
         cidadesAdapter = new CidadesAdapter(this, cidades);
 

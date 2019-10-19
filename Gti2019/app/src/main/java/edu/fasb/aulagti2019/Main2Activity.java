@@ -14,6 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.fasb.aulagti2019.DataBase.CursoController;
 import edu.fasb.aulagti2019.lista_person.AdapterCurso;
 import edu.fasb.aulagti2019.lista_person.Curso;
 
@@ -72,18 +73,28 @@ public class Main2Activity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        CarregaDados();
+    }
+
     private void CarregaDados() {
-        this.cursos = new ArrayList<>(); //cria a lista de cursos
+//        this.cursos = new ArrayList<>(); //cria a lista de cursos
+//
+//        //Cria um curso dentro da lista
+//        this.cursos.add( new Curso(1, "Programação",
+//                R.drawable.ic_programa) );
+//
+//        this.cursos.add( new Curso(2, "Acorda p/Vida",
+//                R.drawable.ic_acorda) );
+//
+//        this.cursos.add( new Curso(3, "Sexta Feira - Recarregar",
+//                R.drawable.ic_battery) );
 
-        //Cria um curso dentro da lista
-        this.cursos.add( new Curso(1, "Programação",
-                R.drawable.ic_programa) );
-
-        this.cursos.add( new Curso(2, "Acorda p/Vida",
-                R.drawable.ic_acorda) );
-
-        this.cursos.add( new Curso(3, "Sexta Feira - Recarregar",
-                R.drawable.ic_battery) );
+        //traz do banco de dados todos os cursos cadastrados
+        this.cursos = new CursoController( getApplication() ).SelectCurso("");
 
         //Cria o adapter personalizado com a lista de cursos criada
         adapterCurso = new AdapterCurso(this, cursos);

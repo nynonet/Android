@@ -15,6 +15,9 @@ public class Cidades {
         this.uf = uf;
     }
 
+    public Cidades() {
+    }
+
     public Integer getId() {
         return id;
     }
@@ -45,19 +48,6 @@ public class Cidades {
         return this.uf + " - "+this.nome;
     }
 
-    //Dados para percistencia de dados
-    public String getINSERT(){
-        return "INSERT INTO cidades (nome, uf) values (?,?)";
-    }
-
-    public String getUPDATE() {
-        return "UPDATE cidades SET nome =?, uf =? WHERE id = ?";
-    }
-
-    public String getDELETE() {
-        return "DELETE FROM cidades WHERE id = ?";
-    }
-
     public static String getSELECT(String where) {
         return "SELECT id, nome, uf FROM cidades "+ where;
     }
@@ -72,4 +62,5 @@ public class Cidades {
     public static String getTabela(){
         return "cidades";
     }
+
 }

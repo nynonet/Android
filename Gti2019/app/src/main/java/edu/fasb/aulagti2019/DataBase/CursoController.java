@@ -2,8 +2,11 @@ package edu.fasb.aulagti2019.DataBase;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.fasb.aulagti2019.lista_person.Curso;
@@ -44,6 +47,8 @@ public class CursoController {
         //monsta no console o valor obtido por retorno
         System.out.println("Valor do Retorno é: "+retorno);
 
+        Log.i("EU", "Retorno foi: "+retorno);
+
         //fecha a conexão com o banco de dados
         this.db.close();
 
@@ -70,9 +75,42 @@ public class CursoController {
     public List<Curso> SelectCurso(String filtro) {
         //abrir o banco de dados em modo de leitura
         this.db = conexaoDB.getReadableDatabase();
+        Cursor query = this.db.rawQuery( Curso.getSelect(filtro),
+                    null );
 
+//        Cursor query = this.db.query(Curso.getTable(), new String[]{"id", "texto", "icone"},
+//                null, null, null, null, null);
+
+        //variavel de retorno da consulta SQL com os objetos Cursos
+        List<Curso> resultado = new ArrayList<>();
+
+//        Log.i("EU", "hum?");
+//        Log.i("EU", Curso.getSelect(""));
+
+
+        query.moveToFirst();    //move para o primeiro registro
+        while (query.moveToNext()){
+            //enquanto não chegar ao final da lista vai movendo para
+//            o próximo.
+//            Log.i("EU", "Eita");
+
+            Curso c = new Curso();
+            c.setId( query.getInt( query.getColumnIndex("id") ) );
+            c.setTexto( query.getString( query.getColumnIndex("texto") ) );
+            c.setIcone( query.getInt( query.getColumnIndex("icone") ) );
+
+            //adiciona o registro na lista de retorno
+            resultado.add( c );
+
+        }
+
+        query.close();  //fecha a query
+
+        //fecha a conexão com o banco de dados
         this.db.close();
-        return null;
+
+        //retorna a lista de cursos encontrados
+        return resultado;
     }
 
 

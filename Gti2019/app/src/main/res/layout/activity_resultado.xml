@@ -8,101 +8,148 @@
     android:gravity="center"
     tools:context=".resultado">
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:weightSum="2"
-        android:layout_margin="5dp"
-        android:layout_height="500dp">
+        android:layout_height="wrap_content"
+        android:text="@string/resultado_lab_titulo"
+        android:gravity="center"
+        android:id="@+id/resultado_status_label"
+        />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:background="@color/colorFundo"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:gravity="center"
-            android:layout_height="0dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/resultado_lab_nome_curso"
+        />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/app_ola"
-                android:textSize="40dp"
-                android:textStyle="bold"
-                android:id="@+id/LabelResult"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultado_edit_curso"
+        />
 
-        </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/resultado_lab_nome_imagem"
+        />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:background="@color/colorAccent"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:weightSum="2"
-            android:layout_height="0dp">
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/resultado_lista_imagens"
+        android:id="@+id/resultado_edit_imagem"
+        />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_height="match_parent">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resultado_lab_nome_salvar"
+        android:id="@+id/resultado_salvar"
+        />
 
-                <Button
-                    android:id="@+id/btnTela3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/labelbtn3"
-                    android:onClick="fechar" />
+    <Button
+        android:id="@+id/btnTela3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/labelbtn3"
+        android:onClick="fechar" />
 
-            </LinearLayout>
+    <!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:orientation="vertical"-->
+<!--        android:weightSum="2"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:layout_height="500dp">-->
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:weightSum="2"
-                android:layout_margin="5dp"
-                android:orientation="vertical"
-                android:layout_height="match_parent">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:background="@color/colorFundo"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_height="0dp">-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_weight="1"
-                    android:layout_margin="5dp"
-                    android:background="@color/colorG"
-                    android:layout_height="0dp">
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/app_ola"-->
+<!--                android:textSize="40dp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:id="@+id/LabelResult"/>-->
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:textSize="40dp"
-                        android:text="@string/app_name"
-                        android:id="@+id/textoIdResultado"
-                        android:layout_gravity="center">
+<!--        </LinearLayout>-->
 
-                    </TextView>
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:background="@color/colorAccent"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:weightSum="2"-->
+<!--            android:layout_height="0dp">-->
 
-                </LinearLayout>
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_height="match_parent">-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_weight="1"
-                    android:layout_margin="5dp"
-                    android:background="@color/colorH"
-                    android:layout_height="0dp">
+<!--                <Button-->
+<!--                    android:id="@+id/btnTela3"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/labelbtn3"-->
+<!--                    android:onClick="fechar" />-->
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:id="@+id/iconeResultado"
-                        android:src="@mipmap/ic_gti_img">
+<!--            </LinearLayout>-->
 
-                    </ImageView>
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:weightSum="2"-->
+<!--                android:layout_margin="5dp"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_height="match_parent">-->
 
-    </LinearLayout>
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_margin="5dp"-->
+<!--                    android:background="@color/colorG"-->
+<!--                    android:layout_height="0dp">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:textSize="40dp"-->
+<!--                        android:text="@string/app_name"-->
+<!--                        android:id="@+id/textoIdResultado"-->
+<!--                        android:layout_gravity="center">-->
+
+<!--                    </TextView>-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_margin="5dp"-->
+<!--                    android:background="@color/colorH"-->
+<!--                    android:layout_height="0dp">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:id="@+id/iconeResultado"-->
+<!--                        android:src="@mipmap/ic_gti_img">-->
+
+<!--                    </ImageView>-->
+<!--                </LinearLayout>-->
+<!--            </LinearLayout>-->
+<!--        </LinearLayout>-->
+
+<!--    </LinearLayout>-->
 
 
 </LinearLayout>

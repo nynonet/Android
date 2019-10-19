@@ -18,7 +18,7 @@ public class ConexaoDB extends SQLiteOpenHelper {
     private static final int VERSAO = 1;
 
     public ConexaoDB(Context context) {
-        super(context, this.DATABASE, null, this.VERSAO);
+        super(context, DATABASE, null, VERSAO);
     }
 
 
