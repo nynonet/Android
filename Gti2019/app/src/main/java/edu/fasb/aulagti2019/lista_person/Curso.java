@@ -66,7 +66,7 @@ public class Curso implements Parcelable {
     @NonNull
     @Override
     public String toString() {
-        return this.texto;
+        return this.id + " - "+  this.texto;
     }
 
 
@@ -89,7 +89,7 @@ public class Curso implements Parcelable {
      * @return
      */
     public static String getSelect( String condicao ) {
-        return "SELECT * FROM cursos "+ condicao;
+        return "SELECT id, texto, icone FROM cursos "+ condicao;
     }
 
     /**
@@ -97,7 +97,7 @@ public class Curso implements Parcelable {
      * @return
      */
     public static String getCreateTable() {
-        return "CREATE TABLE cursos (id auto_increment, " +
+        return "CREATE TABLE cursos (id integer not null, " +
                 "texto varchar(60), icone integer, primary key (id) );";
     }
 
@@ -108,4 +108,6 @@ public class Curso implements Parcelable {
     public static String getTable () {
         return "cursos";
     }
+
+
 }

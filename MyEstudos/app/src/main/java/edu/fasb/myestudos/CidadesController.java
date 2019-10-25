@@ -41,18 +41,19 @@ public class CidadesController {
         long resultado;
         ContentValues valores;
         db = banco.getWritableDatabase();
-
+        Log.i("AFF", "Hummmm ");
         valores = new ContentValues();
         valores.put( Cidades.colunas[1], cidades.getNome() );
         valores.put( Cidades.colunas[2], cidades.getUf() );
 
         String where = "id="+cidades.getId();
+        Log.i("AFF", "where: " + where);
 
         resultado = db.update(Cidades.getTabela(), valores, where, null);
 
         db.close();
         Log.i("AFF", "ata: " + resultado);
-        Log.i("AFF", "where: " + where);
+//        Log.i("AFF", "where: " + where);
         return (resultado==0? "Erro ao atualizar cidade!" : "Cidade atualizada com sucesso!");
     }
 

@@ -38,6 +38,14 @@ public class TelaCidade extends AppCompatActivity {
             );
 
             edt_cidade.setText( cidade.getNome() );
+
+            for (int i =0; i<edt_uf.getCount()-1; i++ ) {
+                if (edt_uf.getItemAtPosition(i).toString().equals( cidade.getUf() )){
+                    edt_uf.setSelection(i);
+//                    return;
+                }
+            }
+
         }
 
         btnSalvar.setOnClickListener(new View.OnClickListener() {
@@ -47,11 +55,17 @@ public class TelaCidade extends AppCompatActivity {
                 cad.setNome( edt_cidade.getText().toString() );
                 cad.setUf( edt_uf.getSelectedItem().toString() );
                 String msg;
+
+                Log.i("AFF", "Hum? Antes...");
+
                 if (cidade == null) {
+                    Log.i("AFF", "Cidade == null ok!");
                     msg = new CidadesController(getApplication()).InsertDados(cad);
                 } else {
                     cad.setId( cidade.getId() );
+                    Log.i("AFF", "Cidade != null ok!");
                     msg = new CidadesController(getApplication()).UpdateDados(cad);
+                    Log.i("AFF", "Cidade ?");
                 }
 
                 Toast.makeText(getApplication(), msg, Toast.LENGTH_LONG).show();

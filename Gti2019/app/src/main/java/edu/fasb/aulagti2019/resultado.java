@@ -2,6 +2,7 @@ package edu.fasb.aulagti2019;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +20,7 @@ public class resultado extends AppCompatActivity {
     private TextView titulo;
     private Spinner icone;
     private Button btnSalvar;
+    private Curso cursoAltera = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,17 +35,29 @@ public class resultado extends AppCompatActivity {
 
         btnSalvar = (Button) findViewById(R.id.resultado_salvar);
 
+
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                Curso c = new Curso();
 
                c.setTexto( texto.getText().toString() );
-//               c.setIcone( (int) icone.getSelectedItem() );
 
-                c.setIcone( R.drawable.ic_programa );
+                int i = (int) icone.getSelectedItemPosition();
 
-               String msg = new CursoController(getApplication()).Insert( c );
+                switch ( i ){
+                    case 0 : c.setIcone( R.drawable.ic_acorda ); break;
+                    case 1 : c.setIcone( R.drawable.ic_battery ); break;
+                    case 2 : c.setIcone( R.drawable.ic_programa ); break;
+                }
+
+               String msg;
+                if (cursoAltera == null) {
+                    msg = new CursoController(getApplication()).Insert(c);
+                } else {
+                    c.setId( cursoAltera.getId() ); //pegar o ID do objeto a alterar
+                    msg = new CursoController(getApplication()).Update(c);
+                }
 
                Toast.makeText(v.getContext(), msg, Toast.LENGTH_LONG).show();
 
@@ -60,13 +74,22 @@ public class resultado extends AppCompatActivity {
                 //preenchedo o nome do curso na tela
                 texto.setText( c.getTexto() );
 
+//                Log.i("EU",  );
+
                 //preenchedo o id do curso na tela
                 titulo.setText(
                         getResources().getString(R.string.resultado_lab_titulo_alt) );
 
-                //mostrando o Icone do curso na tela
-                icone.setSelection( c.getIcone() );
+                Log.i("EU", "ID do curso em edição: "+ c );
 
+                //mostrando o Icone do curso na tela
+                for (int i =0; i<icone.getCount()-1; i++) {
+                    if ( icone.getItemAtPosition(i).toString().equals( getString(c.getIcone()) ) ) {
+                        icone.setSelection(i);
+                    }
+                }
+
+                cursoAltera = c;
             }
 
         }

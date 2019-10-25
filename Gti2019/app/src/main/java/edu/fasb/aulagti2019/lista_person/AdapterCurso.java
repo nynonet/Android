@@ -64,10 +64,11 @@ public class AdapterCurso extends BaseAdapter {
             obj = (Auxiliar) view.getTag(); //atribui o objeto vindo do ListView
         }
 
-        //passando o valor da lista p/o objeto visual
-        obj.texto.setText( lista.get(position).getTexto() );
-        obj.icone.setImageResource( lista.get(position).getIcone() );
-
+        if (obj != null) {
+            //passando o valor da lista p/o objeto visual
+            obj.texto.setText(lista.get(position).getTexto());
+            obj.icone.setImageResource(lista.get(position).getIcone());
+        }
         //retorna a view que fora personalizada.
         return view;
     }

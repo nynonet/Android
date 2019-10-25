@@ -64,7 +64,22 @@ public class CursoController {
      * @return retorna mensagem ao usuário.
      */
     public String Update(Curso curso) {
-        return "";
+        this.db = conexaoDB.getWritableDatabase();
+
+        ContentValues valores = new ContentValues();
+        valores.put("texto", curso.getTexto());
+        valores.put("icone", curso.getIcone());
+
+        String where = "id = "+curso.getId();
+        Log.i("EU", "Condição: "+where);
+
+        int resultado = this.db.update(Curso.getTable(),
+                valores, where, null);
+
+        String msg = (resultado==0?"Falha no atualizar"
+                :"Atualizado com sucesso!");
+        this.db.close();
+        return msg;
     }
 
     /**
@@ -88,17 +103,19 @@ public class CursoController {
 //        Log.i("EU", Curso.getSelect(""));
 
 
-        query.moveToFirst();    //move para o primeiro registro
+//        query.moveToFirst();    //move para o primeiro registro
         while (query.moveToNext()){
             //enquanto não chegar ao final da lista vai movendo para
 //            o próximo.
-//            Log.i("EU", "Eita");
 
             Curso c = new Curso();
+
+//            Log.i("EU", "Id db: "+ query.getInt( query.getColumnIndex("id") ));
+
             c.setId( query.getInt( query.getColumnIndex("id") ) );
             c.setTexto( query.getString( query.getColumnIndex("texto") ) );
             c.setIcone( query.getInt( query.getColumnIndex("icone") ) );
-
+//            Log.i( "EU", "Curso Icone: "+ query.getInt( query.getColumnIndex("icone") ) );
             //adiciona o registro na lista de retorno
             resultado.add( c );
 
