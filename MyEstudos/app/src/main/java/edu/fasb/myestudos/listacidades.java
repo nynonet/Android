@@ -2,8 +2,10 @@ package edu.fasb.myestudos;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -45,6 +47,12 @@ public class listacidades extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         Carregar();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.e("AFF", "Eita deu Certo?");
     }
 
     private void Carregar(){

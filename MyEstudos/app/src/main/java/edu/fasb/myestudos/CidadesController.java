@@ -83,6 +83,21 @@ public class CidadesController {
         return retorno;
     }
 
+    public String DeleteDados(Cidades cidades) {
+        long resultado;
+        db = banco.getWritableDatabase();
+
+        String where = "id="+cidades.getId();
+        Log.i("AFF", "where: " + where);
+
+        resultado = db.delete(Cidades.getTabela(), where, null);
+
+        db.close();
+        Log.i("AFF", "ata: " + resultado);
+//        Log.i("AFF", "where: " + where);
+        return (resultado==0? "Erro ao deletar cidade!" : "Cidade removida com sucesso!");
+    }
+
     public Cidades getCidade(String id){
         db = banco.getReadableDatabase();
 
