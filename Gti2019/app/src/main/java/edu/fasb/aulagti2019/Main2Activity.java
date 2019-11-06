@@ -44,22 +44,24 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
 
+
+
         //programando o listview
         list1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //chama a tela de resultado "Editar curso"
-//                Intent telaResult = new Intent(getApplicationContext(), resultado.class);
+                Intent telaResult = new Intent(getApplicationContext(), resultado.class);
                 //enviando objeto curso a ser editado.
-//                telaResult.putExtra("ObjCurso", cursos.get( position ));
+                telaResult.putExtra("ObjCurso", cursos.get( position ));
                 //Chamando a tela
-//                startActivity( telaResult );
+                startActivity( telaResult );
 
-                Intent telaDisc = new Intent( getApplicationContext(), ListaDisciplinas.class );
-
-                telaDisc.putExtra("id", cursos.get(position).getId() );
-
-                startActivity(telaDisc);
+//                Intent telaDisc = new Intent( getApplicationContext(), ListaDisciplinas.class );
+//
+//                telaDisc.putExtra("id", cursos.get(position).getId() );
+//
+//                startActivity(telaDisc);
 
             }
         });

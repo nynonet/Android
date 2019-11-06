@@ -1,5 +1,7 @@
 package edu.fasb.aulagti2019;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +22,7 @@ public class resultado extends AppCompatActivity {
     private TextView titulo;
     private Spinner icone;
     private Button btnSalvar;
+    private Button btnDeletar;
     private Curso cursoAltera = null;
 
     @Override
@@ -34,6 +37,41 @@ public class resultado extends AppCompatActivity {
         icone = (Spinner) findViewById(R.id.resultado_edit_imagem);
 
         btnSalvar = (Button) findViewById(R.id.resultado_salvar);
+
+        btnDeletar = (Button) findViewById(R.id.resultado_del);
+
+        btnDeletar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(resultado.this)
+                        .setTitle(getString(R.string.dialogConfirma))
+                        .setMessage(getString(R.string.dialogConfirmaMsg))
+                        .setPositiveButton(getString(R.string.dialogConfirmaSim), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //ação Sim.
+
+                                String msg = new CursoController(resultado.this)
+                                        .Deletar(cursoAltera);
+
+                                Toast.makeText(resultado.this, msg,
+                                        Toast.LENGTH_LONG).show();
+
+                                finish();
+
+                            }
+                        })
+                        .setNegativeButton(getString(R.string.dialogConfirmaNao), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //ação do não.
+                                //okk tá pronto
+                            }
+                        })
+                        .show();
+
+            }
+        });
 
 
         btnSalvar.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +111,8 @@ public class resultado extends AppCompatActivity {
                 Curso c = (Curso) getIntent().getParcelableExtra("ObjCurso");
                 //preenchedo o nome do curso na tela
                 texto.setText( c.getTexto() );
+
+                btnDeletar.setVisibility(View.VISIBLE);
 
 //                Log.i("EU",  );
 

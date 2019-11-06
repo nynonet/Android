@@ -130,6 +130,23 @@ public class CursoController {
         return resultado;
     }
 
+    /**
+     * Apagando os dados do curso
+     * @param curso curso a deletar no banco de dados
+     * @return retorna mensagem ao usuário.
+     */
+    public String Deletar(Curso curso) {
+        this.db = conexaoDB.getWritableDatabase();
 
+        String where = "id = "+curso.getId();
+//        Log.i("EU", "Condição: "+where);
+
+        int resultado = this.db.delete(Curso.getTable(), where, null);
+
+        String msg = (resultado==0?"Falha no deletar"
+                :"Removido com sucesso!");
+        this.db.close();
+        return msg;
+    }
 
 }

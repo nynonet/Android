@@ -41,17 +41,40 @@
         android:id="@+id/resultado_edit_imagem"
         />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/resultado_lab_nome_salvar"
-        android:id="@+id/resultado_salvar"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="@string/resultado_lab_nome_salvar"
+            android:id="@+id/resultado_salvar"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            android:background="@color/colorG"
+            android:text="@string/resultado_lab_nome_del"
+            android:id="@+id/resultado_del"
+            />
+
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/btnTela3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:text="@string/labelbtn3"
         android:onClick="fechar" />
 

@@ -16,6 +16,7 @@
     <string name="resultado_lab_nome_curso">Nome do Curso</string>
     <string name="resultado_lab_nome_imagem">Selecione a imagem</string>
     <string name="resultado_lab_nome_salvar">Salvar Curso</string>
+    <string name="resultado_lab_nome_del">Apagar Curso</string>
 
     <array name="resultado_lista_imagens">
         <item>@drawable/ic_acorda</item>
@@ -38,4 +39,12 @@
         <item>Estágio II</item>
         <item>Segurança da Informação</item>
     </array>
+
+
+<!--    dialog deletar-->
+    <string name="dialogConfirma">Confirma</string>
+    <string name="dialogConfirmaMsg">Você deseja realmente apagar esse registro?</string>
+    <string name="dialogConfirmaSim">Sim</string>
+    <string name="dialogConfirmaNao">Não</string>
+
 </resources>
