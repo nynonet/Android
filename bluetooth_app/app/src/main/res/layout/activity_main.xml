@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--TODO 03 - Personalizando o Layout-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient"
+    tools:context=".MainActivity">
+
+<!--    Botoes-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_height="0dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/MA_Informacao1">
+        </TextView>
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:src="@android:drawable/button_onoff_indicator_off"
+            android:id="@+id/btnAtivar">
+        </ImageButton>
+
+    </LinearLayout>
+
+<!--    Dispositivos-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_height="0dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnLista"
+            android:visibility="invisible"
+            android:text="@string/MA_btnLista"/>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listDispositivos"/>
+
+    </LinearLayout>
+<!--    Mensagens-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_height="0dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/lb_mensagens">
+
+        </TextView>
+
+    </LinearLayout>
+
+</LinearLayout>

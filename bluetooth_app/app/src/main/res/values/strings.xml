@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">bluetooth_app</string>
+    <string name="MA_Informacao1">Status do Bluetooth</string>
+    <string name="MA_btnLista">Buscar Dispositivos</string>
+
+<!--    TODO 04 - Declarando os icones do bluetooth ativo/inativo-->
+    <drawable name="bluetooth_on">@android:drawable/button_onoff_indicator_on</drawable>
+    <drawable name="bluetooth_off">@android:drawable/button_onoff_indicator_off</drawable>
+
+    <string name="msgBluetoothAusente">Seu dispositivo não tem suporte ao Bluetooth!</string>
+    <string name="msgBluetoothOk">Bluetooth pronto para uso!</string>
+    <string name="msgBluetoothFalha">Bluetooth, não ativado ou falha!</string>
+    <string name="msgBluetoothOff">Bluetooth desativado!</string>
+    <string name="msgBluetoothInfEncontrado">Encontramos n% dispositivos pareados!</string>
+
+</resources>
