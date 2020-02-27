@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--TODO 02 PERSINALIZANDO SEU LAYOUT-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!--        linear do topo-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_height="0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_status"
+            />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:src="@drawable/blueInativo"
+            android:id="@+id/btnAtiva"
+            />
+
+    </LinearLayout>
+
+    <!--        lienar do centro-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_height="0dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_listar"
+            android:id="@+id/btnBusca"
+            />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listaDispositivos"/>
+
+    </LinearLayout>
+
+    <!--        linear do rodapé-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lbMensagems"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+</LinearLayout>

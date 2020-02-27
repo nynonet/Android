@@ -1,0 +1,19 @@
+<!--    TODO 03 - DECLARANDO OS RESOUCES-->
+<resources>
+    <string name="app_name">BlueUniFasb</string>
+
+    <string name="label_status">Status do Bluetooth</string>
+    <string name="label_listar">Listar os dispositivos</string>
+
+<!--    Mensagagens do Bluetooth-->
+    <string name="msg_blue_noblue">Dispositivo sem suporte ao bluetooth</string>
+    <string name="msg_blue_falha">Falha ou não permissão de acesso</string>
+    <string name="msg_blue_ok">Bluetooth Ativado</string>
+    <string name="msg_blue_dipositivos">Foram encontrados % dispositivos</string>
+
+<!--    Imagens do botão de ativar/desativar-->
+    <drawable name="blueAtivo"> @android:drawable/btn_star_big_on </drawable>
+    <drawable name="blueInativo"> @android:drawable/btn_star_big_off </drawable>
+
+
+</resources>

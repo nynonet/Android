@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="corTopo">#6FAD49</color>
+    <color name="corCentro">#A2A718</color>
+    <color name="corRodape">#D35CABE7</color>
+    <color name="corCentroEsquedo">#FFD700</color>
+    <color name="corCentroDireito">#FFF0F5</color>
+
+    <color name="corTitulo">#F508F5</color>
+</resources>

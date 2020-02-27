@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">UniFasbCidade</string>
+
+    <string name="tituloNome">Injeção de SQL</string>
+
+    <string name="lbInformacao">Escreva um Texto</string>
+    <string name="lbHint">digite aqui seu texto</string>
+    <string name="lbButon">Show Texto</string>
+</resources>
