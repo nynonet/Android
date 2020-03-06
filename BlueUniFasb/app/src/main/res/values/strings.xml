@@ -15,5 +15,9 @@
     <drawable name="blueAtivo"> @android:drawable/btn_star_big_on </drawable>
     <drawable name="blueInativo"> @android:drawable/btn_star_big_off </drawable>
 
+    <!--TODO 14 - Declarando as variaveis do activity_devices.xml-->
+    <string name="label_device_nome">Nome</string>
+    <string name="label_device_mac">Endereço MAC</string>
+    <string name="label_device_conectar">Conectar</string>
 
 </resources>

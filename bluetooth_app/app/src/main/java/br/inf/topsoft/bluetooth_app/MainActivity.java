@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 //    TODO 08 - Variaveis de Controle da Tela
     private static final int BLUETOOTH_STATUS = 1;
     private BluetoothAdapter bluetoothAdapter;
-    private List<String> dispositivos = new ArrayList<>() ;
+    private List<BluetoothDevice> dispositivos = new ArrayList<>() ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,12 +67,14 @@ public class MainActivity extends AppCompatActivity {
 
                 //capturando os dispositivos pareados e adicionado na lista
                 for (BluetoothDevice dispositivo: bluetoothAdapter.getBondedDevices()){
-                    dispositivos.add( dispositivo.getName()+ " ==> MAC: "+ dispositivo.getAddress() );
+                    dispositivos.add( dispositivo );
                 }
 
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(v.getContext(), R.layout.support_simple_spinner_dropdown_item, dispositivos);
+                AdapterDevices adapterDevices = new AdapterDevices(MainActivity.this, dispositivos);
 
-                listDispositivos.setAdapter(adapter);
+//                ArrayAdapter<BluetoothDevice> adapter = new ArrayAdapter<BluetoothDevice>(v.getContext(), R.layout.support_simple_spinner_dropdown_item, dispositivos);
+
+                listDispositivos.setAdapter(adapterDevices);
 
                 String msg = getString(R.string.msgBluetoothInfEncontrado);
                 lbMensagens.setText(msg.replace("n%", String.valueOf(dispositivos.size())));

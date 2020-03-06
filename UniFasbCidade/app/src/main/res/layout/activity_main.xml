@@ -37,8 +37,18 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="25dp"
             android:background="@color/corCentroEsquedo"
-            android:layout_weight="1"></LinearLayout>
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/btnNovaTela"
+                android:src="@android:drawable/ic_menu_set_as"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"

@@ -3,7 +3,7 @@
     <string name="MA_Informacao1">Status do Bluetooth</string>
     <string name="MA_btnLista">Buscar Dispositivos</string>
 
-<!--    TODO 04 - Declarando os icones do bluetooth ativo/inativo-->
+    <!--    TODO 04 - Declarando os icones do bluetooth ativo/inativo-->
     <drawable name="bluetooth_on">@android:drawable/button_onoff_indicator_on</drawable>
     <drawable name="bluetooth_off">@android:drawable/button_onoff_indicator_off</drawable>
 
@@ -12,5 +12,11 @@
     <string name="msgBluetoothFalha">Bluetooth, não ativado ou falha!</string>
     <string name="msgBluetoothOff">Bluetooth desativado!</string>
     <string name="msgBluetoothInfEncontrado">Encontramos n% dispositivos pareados!</string>
+
+    <!--    TODO 12 - Declarando as variavies da persolização dos dispositivos.-->
+    <string name="lbBotaoConectar">Conectar</string>
+    <string name="lbDispositivoNome">Nome</string>
+    <string name="lbDispositivoMac">Endereço MAC</string>
+
 
 </resources>
