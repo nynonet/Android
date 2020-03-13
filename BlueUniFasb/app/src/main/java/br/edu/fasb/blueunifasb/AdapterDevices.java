@@ -2,12 +2,14 @@ package br.edu.fasb.blueunifasb;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothDevice;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 import java.util.zip.Inflater;
@@ -17,6 +19,12 @@ public class AdapterDevices extends BaseAdapter {
 
     Activity activity;
     List<BluetoothDevice> lista;
+
+    //método construtor da classe
+    public AdapterDevices(Activity activity, List<BluetoothDevice> lista) {
+        this.activity = activity;
+        this.lista = lista;
+    }
 
     @Override
     public int getCount() {
@@ -34,7 +42,7 @@ public class AdapterDevices extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, final ViewGroup parent) {
         Parametros parametros;
 
         LayoutInflater layoutInflater = (LayoutInflater) activity.getSystemService(
@@ -49,7 +57,22 @@ public class AdapterDevices extends BaseAdapter {
             parametros = (Parametros) convertView.getTag();
         }
 
-        //Paramos aqui! :-))
+        //Atribuindo os valores
+        parametros.nome.setText( lista.get(position).getName() );
+        parametros.mac.setText( lista.get(position).getAddress() );
+        parametros.conectar.setTag( lista.get(position) );
+        //Define a função para chamar no click longo
+        parametros.conectar.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                //TODO 18 - Chamando a tela de comandos
+//                Toast.makeText(v.getContext(), "oks", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent( parent.getContext(), ActivityComando.class );
+                intent.putExtra("device", lista.get(position));
+                parent.getContext().startActivity( intent );
+                return true;
+            }
+        });
 
         return convertView;
     }

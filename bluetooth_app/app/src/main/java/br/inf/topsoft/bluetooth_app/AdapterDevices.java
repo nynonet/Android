@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -51,12 +50,12 @@ public class AdapterDevices extends BaseAdapter {
             convertView = inflater.inflate(R.layout.layout_dispositivos, parent, false);
             objetosView = new ObjetosView(convertView);
             convertView.setTag(objetosView);
-        } else  {
+        } else {
             objetosView = (ObjetosView) convertView.getTag();
         }
 
-        objetosView.nome.setText( dispositivos.get(position).getName() );
-        objetosView.mac.setText( dispositivos.get(position).getAddress() );
+        objetosView.nome.setText(dispositivos.get(position).getName());
+        objetosView.mac.setText(dispositivos.get(position).getAddress());
         objetosView.conectar.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {

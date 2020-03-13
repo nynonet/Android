@@ -18,5 +18,9 @@
     <string name="lbDispositivoNome">Nome</string>
     <string name="lbDispositivoMac">Endereço MAC</string>
 
+    <!--    TODO 15 - Declarando as variavies da activity de comandos.-->
+    <string name="lbComand_hint">Digite o comando aqui!</string>
+    <string name="lbComand_resultado">Resultados</string>
+    <string name="lbComand_noDevice">Dispositivo não encotrado</string>
 
 </resources>

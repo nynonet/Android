@@ -7,13 +7,43 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
+    android:layout_margin="5dp"
     tools:context=".ControllerDevice">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="326dp" />
+        android:text="@string/app_name"
+        android:id="@+id/lb_controle_device"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit_controle_comando"
+            android:layout_weight="3"
+            android:hint="@string/lbComand_hint"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_menu_send"
+            android:id="@+id/btn_controle_send"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lbComand_resultado"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list_controle_resultado"/>
 </LinearLayout>

@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private BluetoothAdapter bluetoothAdapter;
     private BluetoothDevice bluetoothDevice;
     private static final int BLUETOOTH_HABILITADO = 1;
-    private List<String> bluetoothPareados;
+    private List<BluetoothDevice> bluetoothPareados;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,15 +91,18 @@ public class MainActivity extends AppCompatActivity {
         //TODO 11 - Listanto e mostrando os dispositivos pareados.
         bluetoothPareados = new ArrayList<>();
         for ( BluetoothDevice d : bluetoothAdapter.getBondedDevices() ){
-            String device = d.getName() + " - " + d.getAddress();
-            bluetoothPareados.add(device);
+//            String device = d.getName() + " - " + d.getAddress();
+//            bluetoothPareados.add(device);
+            bluetoothPareados.add(d);
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getBaseContext(),
-                R.layout.support_simple_spinner_dropdown_item, bluetoothPareados);
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getBaseContext(),
+//                R.layout.support_simple_spinner_dropdown_item, bluetoothPareados);
 
+        AdapterDevices adapterDevices = new AdapterDevices(this, bluetoothPareados);
         //mostra na tela p/o usuário
-        listView.setAdapter(adapter);
+//        listView.setAdapter(adapter);
+        listView.setAdapter(adapterDevices);
     }
 
     @Override
