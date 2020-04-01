@@ -3,6 +3,7 @@ package br.edu.fasb.sersoresdocelular;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
@@ -33,21 +34,28 @@ public class MainActivity extends AppCompatActivity {
 
         lista.addAll( sManager.getSensorList(Sensor.TYPE_ALL) );
 
-        ArrayAdapter<Sensor> adapter = new ArrayAdapter<Sensor>(this,
-                R.layout.support_simple_spinner_dropdown_item,
-                lista
-        );
+//        ArrayAdapter<Sensor> adapter = new ArrayAdapter<Sensor>(this,
+//                R.layout.support_simple_spinner_dropdown_item,
+//                lista
+//        );
+
+        AdapterSensorLista adapter = new AdapterSensorLista(lista, this);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String nome = "Nome: " + lista.get( position ).getName() + "\n"+
-                              "Vendor: " + lista.get( position ).getVendor() + "\n"+
-                              "StringType: " + lista.get( position ).getStringType() + "\n"+
-                              "Versão: " + lista.get( position ).getVersion() + "\n";
 
+                Intent intent = new Intent( getApplication(), TeladoSensor.class );
+                intent.putExtra("sensor_nome", lista.get(position).getName() );
+                intent.putExtra("sensor_vendor", lista.get(position).getVendor() );
+                intent.putExtra("sensor_stringType", lista.get(position).getStringType() );
+                intent.putExtra("sensor_versao", lista.get(position).getVersion() );
 
-                Toast.makeText(getBaseContext(), "Cliquei na lista \n"+nome,
+                intent.putExtra("sensor_type", lista.get(position).getType() );
+
+                startActivity( intent );
+
+                Toast.makeText(getBaseContext(), "Essa foi a opção escolhida!",
                         Toast.LENGTH_SHORT).show();
             }
         });
