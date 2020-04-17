@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">SersoresDoCelular</string>
     <string name="titulo_sensor">Os sensores encontrados</string>
+    <string name="titulo_exemplo">Sensor Exemplo</string>
 </resources>

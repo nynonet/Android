@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    cantos arrendondados-->
+    <corners
+        android:radius="25dp"
+        />
+
+<!--    fundo degrade-->
+    <gradient
+        android:angle="-90"
+        android:startColor="@color/colorInicio"
+        android:endColor="@color/colorFinal" />
+
+<!--    bordas laterais-->
+    <stroke
+        android:color="@color/colorBorda"
+        android:width="2dp"
+        android:dashWidth="2dp"/>
+</shape>

@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     List<Sensor> lista = new ArrayList<>();
 
+    private Button btnExemplo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,11 +36,6 @@ public class MainActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listaSensores);
 
         lista.addAll( sManager.getSensorList(Sensor.TYPE_ALL) );
-
-//        ArrayAdapter<Sensor> adapter = new ArrayAdapter<Sensor>(this,
-//                R.layout.support_simple_spinner_dropdown_item,
-//                lista
-//        );
 
         AdapterSensorLista adapter = new AdapterSensorLista(lista, this);
 
@@ -50,9 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("sensor_vendor", lista.get(position).getVendor() );
                 intent.putExtra("sensor_stringType", lista.get(position).getStringType() );
                 intent.putExtra("sensor_versao", lista.get(position).getVersion() );
-
-                intent.putExtra("sensor_type", lista.get(position).getType() );
-
+                intent.putExtra("type_id", lista.get(position).getType());
                 startActivity( intent );
 
                 Toast.makeText(getBaseContext(), "Essa foi a opção escolhida!",
@@ -62,8 +58,14 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setAdapter( adapter );
 
-
-
+        btnExemplo = (Button) findViewById(R.id.btnExemploSensor);
+        btnExemplo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), TelaExemplo.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

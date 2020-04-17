@@ -5,18 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="5dp"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/titulo_sensor"
+        android:layout_margin="5dp"
         android:textSize="4mm"
+
         android:textStyle="bold"/>
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
         android:id="@+id/listaSensores"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/botao_degrade"
+        android:text="@string/titulo_exemplo"
+        android:layout_margin="5dp"
+        android:id="@+id/btnExemploSensor"/>
 
 </LinearLayout>

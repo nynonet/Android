@@ -16,9 +16,10 @@ public class TeladoSensor extends AppCompatActivity {
     private TextView s_vendor;
     private TextView s_stringType;
     private TextView s_versao;
-    private TextView s_valores;
+    private TextView s_resultado;
 
-    Sensor sensor;
+    private Sensor sensor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,38 +30,37 @@ public class TeladoSensor extends AppCompatActivity {
         s_vendor = ( TextView ) findViewById(R.id.sensor_Vendor);
         s_stringType = ( TextView ) findViewById(R.id.sensor_StringType);
         s_versao = ( TextView ) findViewById(R.id.sensor_Versao);
-        s_valores = ( TextView ) findViewById(R.id.valorId);
+        s_resultado = ( TextView ) findViewById(R.id.valores_do_sesor);
 
         Bundle dados = getIntent().getExtras();
         int idType = -1;
-
         if ( dados != null ) {
             //se sim
             s_nome.setText( dados.getString("sensor_nome") );
             s_vendor.setText( dados.getString("sensor_vendor") );
             s_stringType.setText( dados.getString("sensor_stringType") );
             s_versao.setText( String.valueOf( dados.getInt("sensor_versao") ) );
-
-            idType = dados.getInt("sensor_type");
+            idType = dados.getInt("type_id");
         }
 
-        SensorManager sm = (SensorManager) getSystemService( SENSOR_SERVICE );
-        //Log.i("sensor", String.valueOf( idType ));
-        sensor = sm.getDefaultSensor(  idType  );
+        SensorManager sm = (SensorManager) getSystemService(SENSOR_SERVICE);
+        sensor = sm.getDefaultSensor(idType);
 
-        sm.registerListener(new MeuSensor(), sensor, SensorManager.SENSOR_DELAY_UI);
+        sm.registerListener( new MeuControle(), sensor, SensorManager.SENSOR_DELAY_UI);
     }
 
-    private class MeuSensor implements SensorEventListener {
+    private class MeuControle implements SensorEventListener {
 
         @Override
         public void onSensorChanged(SensorEvent event) {
-            String resp = "";
-            for ( float a :  event.values ) {
-                resp += String.valueOf( a ) + "\n" ;
+            String resultado = "";
+
+            for (float e : event.values){
+                resultado += String.valueOf(e) + "\n";
             }
 
-            s_valores.setText(resp);
+            s_resultado.setText( resultado );
+
         }
 
         @Override
@@ -68,4 +68,6 @@ public class TeladoSensor extends AppCompatActivity {
 
         }
     }
+
+
 }

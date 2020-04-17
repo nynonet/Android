@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    fundo degrade-->
+    <gradient
+        android:startColor="@color/colorfundo1"
+        android:endColor="@android:color/white" />
+
+</shape>
