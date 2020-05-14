@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Busca Filmes, Séries e Vídeos</string>
+
+    <!--    <string name="app_titulo">Busca Filmes, Séries e Vídeos</string>-->
+    <string name="app_hint">Digite o nome do filme</string>
+    <string name="app_resutado">Foram encontrado(s) % registro(s)</string>
+</resources>
