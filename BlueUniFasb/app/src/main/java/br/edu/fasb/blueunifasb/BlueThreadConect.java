@@ -50,7 +50,6 @@ public class BlueThreadConect extends Thread {
         }
 
         if (bluetoothSocket != null) {
-            //para utilizar.
             try {
                 inputDados = bluetoothSocket.getInputStream();
                 outputDados = bluetoothSocket.getOutputStream();

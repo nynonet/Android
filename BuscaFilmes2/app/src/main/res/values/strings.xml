@@ -4,4 +4,20 @@
     <!--    <string name="app_titulo">Busca Filmes, Séries e Vídeos</string>-->
     <string name="app_hint">Digite o nome do filme</string>
     <string name="app_resutado">Foram encontrado(s) % registro(s)</string>
+
+    <string name="app_detalhe_titulo">Titulo</string>
+    <string name="app_detalhe_diretor">Diretor</string>
+    <string name="app_detalhe_genero">Genero</string>
+    <string name="app_detalhe_ano">Ano</string>
+    <string name="app_detalhe_elenco">Elenco</string>
+    <string name="app_detalhe_observacao">Observações</string>
+    <string name="app_detalhe_botao">Ok - Voltar</string>
+    
+    <string name="app_key_omdbapi">f5d3d3d2</string>
+
+    <string-array name="lista_teste">
+        <item>Filme 1</item>
+        <item>Filme 2</item>
+        <item>Filme 3</item>
+    </string-array>
 </resources>
